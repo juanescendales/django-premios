@@ -8,6 +8,9 @@ class Question(models.Model):
         auto_now_add=True, verbose_name="date published"
     )
 
+    def __str__(self):
+        return self.question_text
+
 
 # Class Choice
 class Choice(models.Model):
@@ -16,3 +19,6 @@ class Choice(models.Model):
     )
     choice_text = models.CharField(max_length=200)
     votes = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.choice_text
